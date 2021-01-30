@@ -1,0 +1,17 @@
+server:
+  port: 9000
+spring:
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    username: root
+    password: 123456
+    # 以mysql方式连接 mycat服务器，进行mysql单库分表
+    url: jdbc:mysql://localhost:8066/demo?serverTimezone=GMT%2B8&useSSL=false
+
+mybatis:
+  mapper-locations: classpath:mapping/*Mapper.xml
+  type-aliases-package: com.example.entity
+
+logging:
+  config: classpath:logback-spring.xml
+  level.com: debug
